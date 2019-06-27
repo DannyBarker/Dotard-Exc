@@ -3,6 +3,7 @@ const addToDOM = ( arr) => {
     const outEl = document.querySelector("#output")
     outEl.innerHTML = "<h1>Active Businesses</h1>"
     arr.forEach(business => {
+        let zip = business.addressZipCode
         outEl.innerHTML += `
         <h2>${business.companyName}</h2>
         <section>
@@ -14,6 +15,10 @@ const addToDOM = ( arr) => {
         <section>
         ${business["addressStateCode"]}
         </section>
+        <section>
+        ${zip}
+        </section>
+
 
         `
         outEl.innerHTML += "<hr/>"
